@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+    <title>Gatitos</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Gatitos App</h1>
+      <a
+        ><img
+          class="miu"
+          src="https://i.ibb.co/h7qbDjr/pngwing-com-6.png"
+          alt="gatito-kawai"
+          border="0"
+      /></a>
+    </header>
+
+    <section id="randomCats">
+      <span id="error"></span>
+      <article class="card">
+        <img id="img1" class="photo" alt=" Foto de gatito Aleatorio" />
+        <button id="btn1" class="add">Agregar a colección</button>
+      </article>
+
+      <article class="card">
+        <img id="img2" class="photo" alt=" Foto de gatito Aleatorio" />
+        <button id="btn2" class="add">Agregar a colección</button>
+      </article>
+
+      <article class="card">
+        <img class="photo" id="img3" alt=" Foto de gatito Aleatorio" />
+        <button id="btn3" class="add">Agregar a colección</button>
+      </article>
+
+      <article class="card">
+        <img class="photo" id="img4" alt=" Foto de gatito Aleatorio" />
+        <button id="btn4" class="add">Agregar a colección</button>
+      </article>
+    </section>
+    <button class="load" onclick="loadRandomCats()">
+      Click para más gatitos
+    </button>
+
+    <section id="uploadingDog">
+      <h2>Comparte la foto de tu Michi</h2>
+
+      <form id="uploadingForm">
+        <input
+          class="input-file"
+          size="60"
+          id="file"
+          type="file"
+          ,
+          name="file"
+        />
+        <button class="upload" type="button" onclick="uploadCatPhoto()">
+          Subir foto
+        </button>
+      </form>
+    </section>
+    <section id="FavoriteCats"></section>
+    <footer>
+      <p>@Vicyatm</p>
+    </footer>
+    <script src="./main.js"></script>
+  </body>
+</html>
