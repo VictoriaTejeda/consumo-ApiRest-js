@@ -14,8 +14,6 @@ const spanError = document.querySelector("#error");
 const loadRandomCats = async () => {
   const res = await fetch(API_URL_RANDOM);
   const data = await res.json();
-  console.log("random");
-  console.log(data);
 
   if (res.status !== 200) {
     spanError.innerHTML = "Hubo un Error: " + res.status + data.message;
@@ -44,8 +42,6 @@ const loadRandomCats = async () => {
 const loadFavoriteCats = async () => {
   const res = await fetch(API_URL_FAVORITES);
   const data = await res.json();
-  console.log("favorite");
-  console.log(data);
 
   if (res.status !== 200) {
     spanError.innerHTML = "Hubo un Error: " + res.status + data.message;
@@ -90,9 +86,6 @@ const saveFavoriteCat = async (id) => {
     }),
   });
   const data = await res.json();
-
-  console.log("save");
-  console.log(res);
   if (res.status !== 200) {
     spanError.innerHTML = "Hubo un Error: " + res.status + data.message;
   } else {
@@ -109,7 +102,6 @@ const removeFavoriteCat = async (id) => {
   if (res.status !== 200) {
     spanError.innerHTML = "Hubo un Error: " + res.status + data.message;
   } else {
-    console.log("Eliminado en favoritos");
     loadFavoriteCats();
   }
 };
@@ -117,7 +109,6 @@ const removeFavoriteCat = async (id) => {
 async function uploadCatPhoto() {
   const form = document.querySelector("#uploadingForm");
   const formData = new FormData(form);
-  console.log(formData.get("file"));
 
   const res = await fetch(API_URL_UPLOAD, {
     method: "POST",
