@@ -51,7 +51,7 @@ const loadFavoriteCats = async () => {
     const h2 = document.createElement("h2");
     const h2Text = document.createTextNode("Mi michi colección");
     const div = document.createElement("div");
-    div.classList.add("container")
+    div.classList.add("container");
     h2.appendChild(h2Text);
     section.appendChild(h2);
 
@@ -89,6 +89,15 @@ const saveFavoriteCat = async (id) => {
   if (res.status !== 200) {
     spanError.innerHTML = "Hubo un Error: " + res.status + data.message;
   } else {
+    Swal.fire({
+      title: "Tu michi fue agregado a tu colección",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
     loadFavoriteCats();
   }
 };
@@ -126,7 +135,15 @@ async function uploadCatPhoto() {
   if (res.status !== 201) {
     spanError.innerHTML = "Hubo un Error: " + res.status + data.message;
   } else {
-    console.log("subio");
+    Swal.fire({
+      title: "Tu michi fue agregado a tu colección",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
     loadFavoriteCats();
     saveFavoriteCat(data.id);
   }
